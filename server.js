@@ -2,15 +2,21 @@ const app = require("express")();
 
 const server = require("http").createServer(app);
 
-const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST",
-    "Access-Control-Allow-Origin ": "*",
+const cors = require('cors');
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
 }
+app.use(cors(corsOptions));
+
+
 const io = require("socket.io")(server, {
    
     cors: {
         origin: "*",
+        credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
        
        
       }
@@ -26,6 +32,6 @@ io.on("connection", (socket) => {
 });
 
 server.listen(5000, (req,res) => {
-    res.json("listening on port")
+    
   console.log("listening on port 5000");
 });
