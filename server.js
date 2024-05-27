@@ -20,6 +20,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(5000, () => {
+server.listen(5000, (req,res) => {
+    res.json("listening on port")
   console.log("listening on port 5000");
 });
