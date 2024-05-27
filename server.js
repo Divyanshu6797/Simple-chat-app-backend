@@ -2,12 +2,22 @@ const app = require("express")();
 
 const server = require("http").createServer(app);
 
+cors = require("cors");
+
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://simple-chat-app-frontend-neon.vercel.app'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 
 
 const io = require("socket.io")(server, {
    
     cors: {
-      origin: ['http://localhost:3000', 'https://simple-chat-app-frontend-neon.vercel.app/'],
+      origin: ['http://localhost:3000', 'https://simple-chat-app-frontend-neon.vercel.app'],
       allowedHeaders: ["Access-Control-Allow-Origin"],
       credentials: true
        
