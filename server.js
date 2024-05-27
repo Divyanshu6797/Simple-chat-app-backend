@@ -5,7 +5,7 @@ const server = require("http").createServer(app);
 const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST",
-    "Access-Control-Allow-Origin":true,
+    "Access-Control-Allow-Origin ": "*",
 }
 const io = require("socket.io")(server, {
    
