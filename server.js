@@ -2,11 +2,17 @@ const app = require("express")();
 
 const server = require("http").createServer(app);
 
+const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST",
+    "Access-Control-Allow-Origin":true,
+}
 const io = require("socket.io")(server, {
+   
     cors: {
         origin: "*:*",
         methods : ["GET", "POST"],
-        headers : ["Access-Control-Allow-Origin"],
+        headers : headers,
        
       }
 });
