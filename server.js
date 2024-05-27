@@ -10,9 +10,8 @@ const headers = {
 const io = require("socket.io")(server, {
    
     cors: {
-        origin: "*:*",
-        methods : ["GET", "POST"],
-        headers : headers,
+        origin: "*",
+       
        
       }
 });
