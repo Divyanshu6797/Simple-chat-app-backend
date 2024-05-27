@@ -15,8 +15,8 @@ const io = require("socket.io")(server, {
    
     cors: {
       origin: ['http://localhost:3000', 'https://simple-chat-app-frontend-neon.vercel.app/'],
-        credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
+      allowedHeaders: ["Access-Control-Allow-Origin"],
+      credentials: true
        
        
       }
